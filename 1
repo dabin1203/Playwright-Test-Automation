@@ -1,0 +1,9 @@
+from pages.login_page import LoginPage
+
+def test_login(page):  # 여기서 page는 브라우저 탭입니다.
+    # 조종사가 설명서를 집어 들고, 브라우저 탭(page)을 연결합니다.
+    login_page = LoginPage(page) 
+    
+    # 이제부터는 아주 간단하게 명령만 내립니다.
+    login_page.navigate()
+    login_page.login("standard_user", "secret_sauce")
