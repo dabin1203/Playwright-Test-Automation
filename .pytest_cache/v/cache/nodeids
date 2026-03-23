@@ -1,0 +1,3 @@
+[
+  "tests/test_login_pom.py::test_login_success[chromium]"
+]
