@@ -12,3 +12,10 @@ class LoginPage:
         self.username_input.fill(user)
         self.password_input.fill(pw)
         self.login_button.click()
+
+    @property
+    def error_message_locator(self):
+        return self.page.locator("[data-test='error']")
+
+    def get_error_message_text(self):
+        return self.error_message_locator.inner_text()    
