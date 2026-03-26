@@ -2,6 +2,7 @@ from playwright.sync_api import expect
 from pages.login_page import LoginPage       
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
+from pages.checkout_page import CheckoutInfoPage
 
 def test_add_backpack_to_cart(page):
     login_page = LoginPage(page)
@@ -20,3 +21,9 @@ def test_add_backpack_to_cart(page):
     assert cart_page.cart_item_name.inner_text() == "Sauce Labs Backpack"
     
     cart_page.click_checkout()
+
+    info_page = CheckoutInfoPage(page)
+    
+    info_page.enter_shipping_info("Dabin", "Lee", "12345")
+    
+    expect(page).to_have_url("https://www.saucedemo.com/checkout-step-two.html")

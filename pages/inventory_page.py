@@ -6,3 +6,6 @@ class InventoryPage:
 
     def add_backpack_to_cart(self):
         self.add_to_cart_btn.click()
+
+    def go_to_cart(self):
+        self.page.locator(".shopping_cart_link").click()    
