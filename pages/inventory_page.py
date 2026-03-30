@@ -1,5 +1,7 @@
+from playwright.sync_api import Page
+
 class InventoryPage:
-    def __init__(self, page):
+    def __init__(self, page: Page):
         self.page = page
         self.add_to_cart_btn = page.locator("[data-test='add-to-cart-sauce-labs-backpack']")
         self.cart_badge = page.locator(".shopping_cart_badge")
